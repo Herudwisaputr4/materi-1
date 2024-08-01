@@ -23,15 +23,20 @@ $mercy->tipe = "s350";
 $mercy->mesin ="2000cc";	
 $mercy->max_speed = "280km/h";
 
+$kijang = new mobil;
+$kijang->merek = "kijang";
+$kijang->tipe = "reborn";
+$kijang->mesin ="2000cc";	
+$kijang->max_speed = "280km/h";
+
 echo "$mercy->tipe";
 echo "<br>";
 echo "$bmw->tipe";
+echo "<br>";
+echo "$kijang->tipe";
 
-if ($bmw === $mercy) {
+if ($bmw === $kijang) {
 	echo " sama ";
 }else{
 	echo " tidak ";
 }
-
-
-
