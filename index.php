@@ -1,11 +1,11 @@
 <?php
 
 class mobil {
-	public $merek, $tipe, $mesin, $max_speed; 
+	private $merek, $tipe, $mesin, $max_speed; 
 	public function cetakTipe(){
 		return $this->tipe;
 	}
-	function kecepatanmaksimal(){
+	private function kecepatanmaksimal(){
 		return "kecepatan maksimal dari mobil ini adalah ".$this->max_speed;
 	}
 }
@@ -48,6 +48,6 @@ $kijang->max_speed = "280km/h";
 
 
 
-echo $tesla->kecepatanmaksimal();
+echo $bmw->kecepatanmaksimal();
 
 
