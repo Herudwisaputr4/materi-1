@@ -5,18 +5,26 @@ class mobil {
 	public function cetakTipe(){
 		return $this->tipe;
 	}
-	private function kecepatanmaksimal(){
+	public function kecepatanmaksimal(){
 		return "kecepatan maksimal dari mobil ini adalah ".$this->max_speed;
+	}
+
+	function injekgas(){
+		return "mengalirkan bensin ke ruang bakar, rpm naik, roda berputar";
 	}
 }
 	
 class bmw extends mobil {
-	
+		
 }
 
 class tesla extends mobil {
 	function selfparking(){
 		echo "parkir otomatis";
+	}
+
+	function injekgas(){
+		return "mengalirkan listrik ke dinamo, rpm naik, roda berputar";
 	}
 }
 
@@ -33,21 +41,9 @@ $tesla->mesin ="ev";
 $tesla->max_speed ="400km/h";
 
 
-$mercy = new mobil;
-$mercy->merek = "mercy";
-$mercy->tipe = "s350";
-$mercy->mesin ="2000cc";	
-$mercy->max_speed = "280km/h";
-
-
-$kijang = new mobil;
-$kijang->merek = "kijang";
-$kijang->tipe = "reborn";
-$kijang->mesin ="2000cc";	
-$kijang->max_speed = "280km/h";
-
-
-
-echo $bmw->kecepatanmaksimal();
+echo "bmw : ".$bmw->injekgas();
+echo "<br>";
+echo "<br>";
+echo "tesla : ".$tesla->injekgas();
 
 
