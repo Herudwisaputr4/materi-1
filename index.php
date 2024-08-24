@@ -1,49 +1,93 @@
 <?php
 
-class mobil {
-	private $merek, $tipe, $mesin, $max_speed; 
-	public function cetakTipe(){
-		return $this->tipe;
-	}
-	public function kecepatanmaksimal(){
-		return "kecepatan maksimal dari mobil ini adalah ".$this->max_speed;
-	}
+class Hewan {
+    public $jumlah_kaki;
+    public $bisa_terbang = "tidak bisa terbang";
 
-	function injekgas(){
-		return "mengalirkan bensin ke ruang bakar, rpm naik, roda berputar";
-	}
-}
-	
-class bmw extends mobil {
-		
+    public function bersuara() {
+        return "Hewan ini bersuara";
+    }
 }
 
-class tesla extends mobil {
-	function selfparking(){
-		echo "parkir otomatis";
-	}
 
-	function injekgas(){
-		return "mengalirkan listrik ke dinamo, rpm naik, roda berputar";
-	}
+class Kucing extends Hewan {
+    public $nama = "Momo";
+
+    public function bersuara() {
+        return "meong";
+    }
 }
 
-$bmw = new bmw;
-$bmw->merek = "bmw";
-$bmw->tipe = "320i";
-$bmw->mesin ="2000cc";	
-$bmw->max_speed = "280km/h";
 
-$tesla = new tesla;
-$tesla->merek = "tesla";
-$tesla->tipe = "cybertruck";
-$tesla->mesin ="ev";
-$tesla->max_speed ="400km/h";
+class Anjing extends Hewan {
+    public $nama = "Dogo";
+
+    public function bersuara() {
+        return "gukguk";
+    }
+}
 
 
-echo "bmw : ".$bmw->injekgas();
-echo "<br>";
-echo "<br>";
-echo "tesla : ".$tesla->injekgas();
+class Elang extends Hewan {
+    public $nama = "Zenix";
+
+    public function __construct() {
+        $this->bisa_terbang = "bisa terbang";
+    }
+
+    public function bersuara() {
+        return "miikk";
+    }
+}
 
 
+class Bebek extends Hewan {
+    public $nama = "Dedek";
+
+    public function __construct() {
+        $this->bisa_terbang = "bisa terbang";
+    }
+
+    public function bersuara() {
+        return "kraww";
+    }
+}
+
+
+$momo = new Kucing;
+$momo->jumlah_kaki = 4;
+echo "Momo adalah kucing <br>";
+echo "Punya kaki sebanyak: " . $momo->jumlah_kaki . "<br>";
+echo $momo->bisa_terbang . "<br>";
+echo "Suaranya: " . $momo->bersuara() . "<br>";
+
+echo "<hr>";
+
+$dogo = new Anjing;
+$dogo->jumlah_kaki = 4;
+echo "Dogo adalah anjing <br>";
+echo "Punya kaki sebanyak: " . $dogo->jumlah_kaki . "<br>";
+echo $dogo->bisa_terbang . "<br>";
+echo "Suaranya: " . $dogo->bersuara() . "<br>";
+
+echo "<hr>";
+
+$zenix = new Elang;
+$zenix->jumlah_kaki = 2;
+echo "Zenix adalah elang <br>";
+echo "Punya kaki sebanyak: " . $zenix->jumlah_kaki . "<br>";
+echo $zenix->bisa_terbang . "<br>";
+echo "Suaranya: " . $zenix->bersuara() . "<br>";
+
+echo "<hr>";
+
+$dedek = new Bebek;
+$dedek->jumlah_kaki = 2;
+echo "Dedek adalah bebek <br>";
+echo "Punya kaki sebanyak: " . $dedek->jumlah_kaki . "<br>";
+echo $dedek->bisa_terbang . "<br>";
+echo "Suaranya: " . $dedek->bersuara() . "<br>";
+
+echo "<hr>";
+
+?>
